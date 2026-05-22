@@ -2,9 +2,10 @@
 // Animation de frappe (typing) — plusieurs phrases
 // =============================================
 const phrases = [
-  "Dév. web junior en reconversion",
-  "Passionné par le code et l'IA",
-  "Apprenant chaque jour un peu plus..."
+  "Création de sites web modernes...",
+  "HTML • CSS • JavaScript...",
+  "Responsive design & expérience utilisateur...",
+  "Projets concrets en développement..."
 ];
 
 const element = document.querySelector(".typing");

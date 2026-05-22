@@ -1120,3 +1120,15 @@ footer a:hover {
     flex-direction: column;
   }
 }
+
+.logo img {
+  height: 78px;
+  width: auto;
+  display: block;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
