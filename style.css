@@ -1,22 +1,20 @@
-/* ============================================
-   VARIABLES CSS
-   Toutes les couleurs et valeurs réutilisables.
-   Pour changer l'accent du site, modifie
-   uniquement --couleur-principale ici.
-   ============================================ */
 :root {
-  --couleur-principale:       #10b981;
-  --couleur-principale-fonce: #0ea5e9; /* bleu plus foncé */
-  --bg-sombre:                #0f172a; /* fond principal très sombre */
-  --bg-moyen:                 #1e293b; /* fond des cartes */
-  --bg-nav:        rgba(2, 6, 23, 0.95); /* fond de la barre de navigation */
-  --bg-footer:                #0b1220; /* fond du pied de page */
-  --bordure:                  #334155; /* couleur des bordures */
-  --texte:                    #e2e8f0; /* texte principal clair */
-  --texte-discret:            #94a3b8; /* texte secondaire, plus gris */
-  --texte-carte:              #cbd5e1; /* texte dans les cartes */
-  --transition:            0.3s ease; /* durée et style des animations */
-  --rayon-carte:                 15px; /* arrondi des coins des cartes */
+  --couleur-principale: #38bdf8;
+  --couleur-principale-fonce: #0ea5e9;
+
+  --bg-sombre: #0b1120;
+  --bg-moyen: #111827;
+  --bg-nav: rgba(11, 17, 32, 0.92);
+  --bg-footer: #070d18;
+
+  --bordure: #1e293b;
+
+  --texte: #f8fafc;
+  --texte-discret: #94a3b8;
+  --texte-carte: #cbd5e1;
+
+  --transition: 0.3s ease;
+  --rayon-carte: 16px;
 }
 
 
@@ -51,7 +49,9 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -174,13 +174,19 @@ a:hover {
 
 /* Nom principal avec dégradé de couleur */
 .hero-title {
-  font-size: 3.5rem;
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
   margin-bottom: 15px;
-  background: linear-gradient(90deg, var(--couleur-principale), var(--couleur-principale-fonce));
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg,
+      #ffffff 0%,
+      var(--couleur-principale) 45%,
+      var(--couleur-principale-fonce) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
   animation: fadeUp 0.9s ease forwards;
 }
 
@@ -352,8 +358,57 @@ section h2::after {
    ============================================ */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(17, 24, 39, 0.95), rgba(11, 17, 32, 0.98));
+  border: 1px solid rgba(56, 189, 248, 0.08);
+  border-radius: 18px;
+  padding: 22px;
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-actions {
+  margin-top: auto;
+}
+
+.project-actions {
+  margin-top: auto;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right,
+      rgba(56, 189, 248, 0.08),
+      transparent 45%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(56, 189, 248, 0.08);
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 /* Zone image du projet */
@@ -590,7 +645,8 @@ section h2::after {
 
 /* Colonne gauche : avatar */
 .about-avatar {
-  flex-shrink: 0;  /* empêche l'avatar de rétrécir */
+  flex-shrink: 0;
+  /* empêche l'avatar de rétrécir */
   text-align: center;
 }
 
@@ -885,8 +941,15 @@ footer a:hover {
 }
 
 @keyframes clignotement {
-  0%, 100% { border-color: var(--couleur-principale); }
-  50%       { border-color: transparent; }
+
+  0%,
+  100% {
+    border-color: var(--couleur-principale);
+  }
+
+  50% {
+    border-color: transparent;
+  }
 }
 
 
@@ -900,6 +963,7 @@ footer a:hover {
     opacity: 0;
     transform: translateY(25px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -908,20 +972,27 @@ footer a:hover {
 
 /* Bordure lumineuse tournante sur les boutons sociaux */
 @keyframes borderGlow {
-  0%   { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 /* ============================================
    BOUTON RETOUR EN HAUT
    ============================================ */
 .btn-top {
-  position: fixed;        /* reste toujours visible, même en scrollant */
+  position: fixed;
+  /* reste toujours visible, même en scrollant */
   bottom: 30px;
   right: 30px;
   width: 45px;
   height: 45px;
-  border-radius: 50%;     /* cercle */
+  border-radius: 50%;
+  /* cercle */
   background: linear-gradient(135deg, var(--couleur-principale), var(--couleur-principale-fonce));
   color: var(--bg-sombre);
   border: none;
@@ -955,7 +1026,8 @@ footer a:hover {
    TERMINAL STYLE VS CODE
    ============================================ */
 .terminal {
-  background: #1e1e1e;        /* fond sombre style VS Code */
+  background: #1e1e1e;
+  /* fond sombre style VS Code */
   border-radius: 10px;
   overflow: hidden;
   margin: 0 auto 25px;
@@ -981,9 +1053,17 @@ footer a:hover {
   display: inline-block;
 }
 
-.rouge  { background: #ff5f57; }
-.jaune  { background: #febc2e; }
-.vert   { background: #28c840; }
+.rouge {
+  background: #ff5f57;
+}
+
+.jaune {
+  background: #febc2e;
+}
+
+.vert {
+  background: #28c840;
+}
 
 /* Titre "terminal" centré dans la barre */
 .terminal-titre {
@@ -1001,7 +1081,7 @@ footer a:hover {
   align-items: center;
   gap: 10px;
   min-height: 60px;
-   overflow: hidden;
+  overflow: hidden;
 }
 
 /* Le > vert devant le texte */
@@ -1070,9 +1150,9 @@ footer a:hover {
   }
 
   .terminal-corps {
-  padding: 10px;
-  overflow: hidden;
-}
+    padding: 10px;
+    overflow: hidden;
+  }
 
   .typing {
     font-size: 0.75rem;

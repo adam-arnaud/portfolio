@@ -4,7 +4,7 @@
 const phrases = [
   "Création de sites web modernes...",
   "HTML • CSS • JavaScript...",
-  "Responsive design & expérience utilisateur...",
+  "Design responsive & expérience utilisateur...",
   "Projets concrets en développement..."
 ];
 
