@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Estimation de projet web — Arnaud Adam</title>
+  <meta name="description" content="Estimateur de projet web avec génération de devis PDF personnalisé." />
+
+  <link rel="stylesheet" href="devis/devis.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  <script src="devis/devis.js" defer></script>
+</head>
+
+<body>
+  <main class="quote-page">
+    <a href="index.html" class="back-link">← Retour au site</a>
+
+    <section class="quote-hero">
+      <img src="devis/assets/logo-symbol.png" alt="Logo Arnaud Adam" class="quote-logo">
+      <p class="quote-kicker">Estimation de projet web</p>
+      <h1>Obtenez une première estimation claire et professionnelle</h1>
+      <p>
+        Sélectionnez vos besoins, obtenez une estimation indicative et générez un devis PDF personnalisé.
+      </p>
+    </section>
+
+    <section class="quote-layout">
+      <form class="quote-card" id="quote-form">
+        <div class="form-group">
+          <label for="client-name">Nom du client</label>
+          <input type="text" id="client-name" placeholder="Ex : Jean Dupont">
+        </div>
+
+        <div class="form-group">
+          <label for="site-type">Type de projet</label>
+          <select id="site-type">
+            <option value="landing">Landing page</option>
+            <option value="vitrine">Site vitrine</option>
+            <option value="portfolio">Portfolio professionnel</option>
+            <option value="refonte">Refonte simple</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="pages">Nombre de pages</label>
+          <input type="number" id="pages" min="1" value="1">
+        </div>
+
+        <div class="options-grid">
+          <label><input type="checkbox" class="option" value="150"> Formulaire de contact</label>
+          <label><input type="checkbox" class="option" value="250"> Blog / actualités</label>
+          <label><input type="checkbox" class="option" value="400"> Réservation en ligne</label>
+          <label><input type="checkbox" class="option" value="300"> Optimisation SEO</label>
+          <label><input type="checkbox" class="option" value="120"> Hébergement 1 an</label>
+          <label><input type="checkbox" class="option" value="80"> Google Maps</label>
+          <label><input type="checkbox" class="option" value="200"> Galerie photos</label>
+          <label><input type="checkbox" class="option" value="350"> Maintenance de départ</label>
+        </div>
+
+        <div class="quote-actions">
+          <button type="button" class="btn" id="calculate-btn">Calculer</button>
+          <button type="button" class="btn btn-secondary" id="pdf-btn">Générer le PDF</button>
+          <button type="button" class="btn btn-ghost" id="reset-btn">Réinitialiser</button>
+        </div>
+      </form>
+
+      <aside class="quote-result-card">
+        <h2>Votre estimation</h2>
+        <p id="result">Le devis apparaîtra ici.</p>
+
+        <div class="quote-note">
+          Cette estimation est indicative. Le tarif final dépendra du contenu, des fonctionnalités et de l’accompagnement souhaité.
+        </div>
+
+        <h3>Historique</h3>
+        <ul id="quote-history">
+          <li>Aucun devis enregistré.</li>
+        </ul>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
