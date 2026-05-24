@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Animation de frappe
   // ---------------------------------------------
   const phrases = [
-    "Création de sites web modernes...",
-    "HTML • CSS • JavaScript...",
-    "Design responsive & expérience utilisateur...",
-    "Projets concrets en développement..."
-  ];
+  "Création de sites vitrines modernes...",
+  "Solutions web pour indépendants...",
+  "Design responsive & expérience utilisateur...",
+  "Estimation de projet avec devis PDF..."
+];
 
   const element = document.querySelector(".typing");
 
