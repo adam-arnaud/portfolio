@@ -17,14 +17,20 @@
   --texte-carte: #cbd5e1;
 
   /* ---------- DIMENSIONS ---------- */
-  --largeur-contenu: 1200px;     /* sections principales en desktop */
-  --largeur-navbar: 1280px;      /* navbar légèrement plus large */
-  --largeur-hero: 900px;         /* hero centré aéré (Option A) */
-  --hauteur-nav: 90px;           /* hauteur réelle de la navbar */
+  --largeur-contenu: 1200px;
+  /* sections principales en desktop */
+  --largeur-navbar: 1280px;
+  /* navbar légèrement plus large */
+  --largeur-hero: 900px;
+  /* hero centré aéré (Option A) */
+  --hauteur-nav: 90px;
+  /* hauteur réelle de la navbar */
 
   /* ---------- ESPACEMENTS ---------- */
-  --espace-section: 90px;        /* padding vertical des sections */
-  --espace-section-mobile: 50px; /* padding vertical en mobile */
+  --espace-section: 90px;
+  /* padding vertical des sections */
+  --espace-section-mobile: 50px;
+  /* padding vertical en mobile */
 
   /* ---------- AUTRES ---------- */
   --transition: 0.3s ease;
@@ -84,7 +90,8 @@ a:hover {
   top: 0;
   display: flex;
   align-items: center;
-  justify-content: center; /* mobile : tout centré */
+  justify-content: center;
+  /* mobile : tout centré */
   gap: 20px;
   padding: 12px 20px;
   background: var(--bg-nav);
@@ -98,7 +105,8 @@ a:hover {
   max-width: var(--largeur-navbar);
   display: flex;
   align-items: center;
-  justify-content: center; /* mobile : empilé et centré */
+  justify-content: center;
+  /* mobile : empilé et centré */
   flex-wrap: wrap;
   gap: 12px;
 }
@@ -171,7 +179,8 @@ a:hover {
 /* NAVIGATION — desktop (≥ 768px) */
 @media (min-width: 768px) {
   .navbar-inner {
-    justify-content: space-between; /* logo à gauche, liens à droite */
+    justify-content: space-between;
+    /* logo à gauche, liens à droite */
   }
 
   .logo img {
@@ -190,7 +199,7 @@ a:hover {
 
 /* HERO */
 .hero {
-  min-height: 90vh;
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,38 +207,50 @@ a:hover {
   background: radial-gradient(circle at top, var(--bg-moyen), var(--bg-sombre));
   position: relative;
   overflow: hidden;
-  padding: 70px 20px;
+  padding: 60px 20px;
 }
 
 .hero::before {
   content: "";
   position: absolute;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   background: radial-gradient(circle, rgba(56, 189, 248, 0.15), transparent);
   top: -100px;
   left: -100px;
   filter: blur(80px);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.1), transparent);
+  bottom: -80px;
+  right: -80px;
+  filter: blur(70px);
+  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 700px;
+  max-width: var(--largeur-hero);
 }
 
 .hero-title {
-  font-size: clamp(3.5rem, 8vw, 5.5rem);
-  margin-bottom: 15px;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  margin-bottom: 18px;
   font-weight: 800;
   letter-spacing: -1px;
-  background: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    var(--couleur-principale) 45%,
-    var(--couleur-principale-fonce) 100%
-  );
+  line-height: 1.1;
+  background: linear-gradient(90deg,
+      #ffffff 0%,
+      var(--couleur-principale) 45%,
+      var(--couleur-principale-fonce) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -238,10 +259,14 @@ a:hover {
   animation: fadeUp 0.9s ease forwards;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
+.hero-subtitle {
+  font-size: 1.1rem;
   color: var(--texte-discret);
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.55;
   opacity: 0;
   animation: fadeUp 0.9s ease 0.2s forwards;
 }
@@ -253,6 +278,32 @@ a:hover {
   flex-wrap: wrap;
   opacity: 0;
   animation: fadeUp 0.9s ease 0.4s forwards;
+}
+
+/* HERO — tablette (≥ 768px) */
+@media (min-width: 768px) {
+  .hero {
+    min-height: 75vh;
+    padding: 80px 30px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+  }
+}
+
+/* HERO — desktop large (≥ 1200px) */
+@media (min-width: 1200px) {
+  .hero {
+    min-height: 80vh;
+    padding: 100px 30px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+  }
 }
 
 /* TERMINAL */
@@ -328,14 +379,14 @@ a:hover {
 
 /* SECTIONS */
 section {
-  max-width: 1000px;
+  max-width: var(--largeur-contenu);
   margin: auto;
-  padding: 70px 20px;
+  padding: var(--espace-section-mobile) 20px;
 }
 
 section h2 {
   margin-bottom: 25px;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   position: relative;
   text-align: left;
 }
@@ -353,7 +404,44 @@ section h2::after {
 
 .section-intro {
   color: var(--texte-discret);
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+/* SECTIONS — tablette (≥ 768px) */
+@media (min-width: 768px) {
+  section {
+    padding: 70px 30px;
+  }
+
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  section h2::after {
+    width: 60px;
+    height: 4px;
+    bottom: -12px;
+  }
+
+  .section-intro {
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+  }
+}
+
+/* SECTIONS — desktop large (≥ 1200px) */
+@media (min-width: 1200px) {
+  section {
+    padding: var(--espace-section) 40px;
+  }
+
+  section h2 {
+    font-size: 2.3rem;
+    margin-bottom: 35px;
+  }
 }
 
 /* BOUTONS */
@@ -439,8 +527,8 @@ section h2::after {
 /* PROJETS */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr));
-  gap: 28px;
+  grid-template-columns: 1fr;
+  gap: 24px;
   align-items: stretch;
 }
 
@@ -481,10 +569,10 @@ section h2::after {
 
 .project-image {
   position: relative;
-  height: 180px;
+  height: 200px;
   border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   background: var(--bg-sombre);
 }
 
@@ -492,6 +580,7 @@ section h2::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: 0.4s ease;
 }
 
@@ -527,7 +616,7 @@ section h2::after {
 }
 
 .project-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .project-card:hover .project-overlay {
@@ -568,6 +657,38 @@ section h2::after {
   flex-wrap: wrap;
   align-items: center;
   margin-top: auto;
+  padding-top: 18px;
+}
+
+/* PROJETS — tablette (≥ 768px) */
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .project-card {
+    padding: 24px;
+  }
+
+  .project-image {
+    height: 210px;
+  }
+}
+
+/* PROJETS — desktop large (≥ 1200px) */
+@media (min-width: 1200px) {
+  .projects-grid {
+    gap: 32px;
+  }
+
+  .project-card {
+    padding: 28px;
+  }
+
+  .project-image {
+    height: 240px;
+  }
 }
 
 /* COMPÉTENCES */
@@ -944,6 +1065,7 @@ footer a:hover {
 
 /* ANIMATIONS */
 @keyframes clignotement {
+
   0%,
   100% {
     border-color: var(--couleur-principale);
@@ -1031,7 +1153,7 @@ footer a:hover {
     line-height: 1.05;
   }
 
-  .hero-content p {
+  .hero-subtitle {
     font-size: 1rem;
     margin-bottom: 20px;
   }
@@ -1063,39 +1185,7 @@ footer a:hover {
     white-space: normal;
     line-height: 1.4;
   }
-
-  section {
-    padding: 45px 16px;
-  }
-
-  section h2 {
-    font-size: 1.55rem;
-  }
-
-  .section-intro {
-    font-size: 0.92rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    padding: 18px;
-  }
-
-  .project-card h3 {
-    font-size: 1.15rem;
-  }
-
-  .project-card p {
-    font-size: 0.92rem;
-  }
-
-  .project-image {
-    height: 185px;
-  }
-
+  
   .project-actions,
   .socials {
     flex-direction: column;
