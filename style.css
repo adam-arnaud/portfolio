@@ -84,13 +84,23 @@ a:hover {
   top: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 35px;
+  justify-content: center; /* mobile : tout centré */
+  gap: 20px;
   padding: 12px 20px;
   background: var(--bg-nav);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(148, 163, 184, 0.15);
   z-index: 1000;
+}
+
+.navbar-inner {
+  width: 100%;
+  max-width: var(--largeur-navbar);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* mobile : empilé et centré */
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .logo {
@@ -100,31 +110,36 @@ a:hover {
 }
 
 .logo img {
-  height: 78px;
+  height: 60px;
   width: auto;
   display: block;
+  transition: transform var(--transition);
+}
+
+.logo:hover img {
+  transform: scale(1.05);
 }
 
 .nav-links {
   display: flex;
-  gap: 25px;
+  gap: 8px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .nav-links a {
   position: relative;
-  color: #f8fafc;
+  color: var(--texte);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: 10px;
   transition: var(--transition);
 }
 
 .nav-links a:visited {
-  color: #f8fafc;
+  color: var(--texte);
 }
 
 .nav-links a:hover {
@@ -138,14 +153,39 @@ a:hover {
   position: absolute;
   width: 0;
   height: 2px;
-  left: 12px;
+  left: 14px;
   bottom: 4px;
   background: var(--couleur-principale);
   transition: var(--transition);
 }
 
 .nav-links a:hover::after {
-  width: calc(100% - 24px);
+  width: calc(100% - 28px);
+}
+
+.nav-links a:focus-visible {
+  outline: 2px solid var(--couleur-principale);
+  outline-offset: 2px;
+}
+
+/* NAVIGATION — desktop (≥ 768px) */
+@media (min-width: 768px) {
+  .navbar-inner {
+    justify-content: space-between; /* logo à gauche, liens à droite */
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  .nav-links {
+    gap: 6px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
 }
 
 /* HERO */
