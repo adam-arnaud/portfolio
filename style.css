@@ -614,8 +614,8 @@ section h2::after {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
   margin-top: 35px;
 }
 
