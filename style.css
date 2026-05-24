@@ -29,6 +29,11 @@ html {
   scroll-behavior: smooth;
 }
 
+section,
+header {
+  scroll-margin-top: 120px;
+}
+
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: radial-gradient(circle at top, var(--bg-moyen), var(--bg-sombre));
@@ -907,92 +912,147 @@ footer a:hover {
   }
 }
 
-/* RESPONSIVE TABLETTE */
-@media (max-width: 768px) {
-  .navbar {
-    gap: 18px;
-  }
+/* Phase 1 — Badge code privé (sera réorganisé en Phase 2) */
+.badge-private {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  margin-top: 15px;
+  background: rgba(148, 163, 184, 0.08);
+  color: var(--texte-discret);
+  border: 1px dashed rgba(148, 163, 184, 0.3);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
 
-  .logo img {
-    height: 58px;
-  }
-
-  .hero-title {
-    font-size: 2.8rem;
-  }
-
-  .nav-links {
-    gap: 8px;
-  }
-
-  .nav-links a {
-    font-size: 0.82rem;
-    padding: 6px 8px;
-  }
-
-  section {
-    padding: 50px 20px;
-  }
-
-  .skills-grid {
-    max-width: 100%;
-  }
+.badge-private i {
+  font-size: 0.8rem;
 }
 
 /* RESPONSIVE MOBILE */
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
+    padding: 10px 12px;
   }
 
   .logo img {
-    height: 54px;
+    height: 52px;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+    padding: 4px 0 6px;
+  }
+
+  .nav-links a {
+    flex: 0 0 auto;
+    font-size: 0.72rem;
+    padding: 7px 9px;
+    background: rgba(56, 189, 248, 0.06);
+    border: 1px solid rgba(56, 189, 248, 0.12);
+    border-radius: 8px;
   }
 
   .hero {
-    padding: 40px 20px;
+    min-height: auto;
+    padding: 62px 18px 45px;
+  }
+
+  .hero-content {
+    max-width: 100%;
   }
 
   .hero-title {
-    font-size: 2.2rem;
+    font-size: clamp(2.4rem, 14vw, 3.2rem);
+    line-height: 1.05;
   }
 
   .hero-content p {
     font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-buttons .btn {
+    width: auto;
+    min-width: 220px;
+    text-align: center;
   }
 
   .terminal {
-    max-width: 95%;
-    margin: 0 auto 25px;
+    max-width: 100%;
+    margin: 0 auto 24px;
   }
 
   .terminal-corps {
-    padding: 10px;
-    overflow: hidden;
+    padding: 14px;
+    min-height: 58px;
   }
 
   .typing {
-    font-size: 0.75rem;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  .nav-links {
-    gap: 6px;
-  }
-
-  .nav-links a {
-    font-size: 0.75rem;
-    padding: 5px 6px;
+    font-size: 0.82rem;
+    white-space: normal;
+    line-height: 1.4;
   }
 
   section {
-    padding: 40px 15px;
+    padding: 45px 16px;
+  }
+
+  section h2 {
+    font-size: 1.55rem;
+  }
+
+  .section-intro {
+    font-size: 0.92rem;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 18px;
+  }
+
+  .project-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .project-card p {
+    font-size: 0.92rem;
+  }
+
+  .project-image {
+    height: 185px;
+  }
+
+  .project-actions,
+  .socials {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .project-actions .btn,
+  .socials .social {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .skills-grid {
@@ -1003,29 +1063,33 @@ footer a:hover {
 
   .skill-card {
     width: 100%;
-    max-width: 320px;
+    max-width: 340px;
+  }
+
+  .about-card {
+    padding: 22px;
   }
 
   .about-layout {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     text-align: center;
+    gap: 25px;
   }
 
   .about-photo {
-    width: 165px;
-    height: 165px;
+    width: 155px;
+    height: 155px;
   }
 
-  .hero-buttons,
-  .project-actions,
-  .socials {
-    flex-direction: column;
-    align-items: center;
+  .contact-card {
+    padding: 22px;
   }
 
-  .project-actions .btn {
-    width: 100%;
-    text-align: center;
+  .btn-top {
+    right: 18px;
+    bottom: 18px;
+    width: 42px;
+    height: 42px;
   }
 }
