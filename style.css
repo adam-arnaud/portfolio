@@ -173,6 +173,15 @@ a:hover {
   text-decoration: none;
 }
 
+.logo-text:hover {
+  color: inherit;
+  background: transparent;
+}
+
+.logo-text:hover span {
+  color: var(--couleur-principale);
+}
+
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -1261,6 +1270,31 @@ footer a:hover {
 
 .badge-private i {
   font-size: 0.8rem;
+}
+
+/* Logo navbar — couleurs fixes même au survol */
+.navbar .logo.logo-text {
+  color: #f8fafc;
+  background: transparent;
+  text-decoration: none;
+}
+
+.navbar .logo.logo-text span {
+  color: var(--couleur-principale);
+}
+
+.navbar .logo.logo-text:hover,
+.navbar .logo.logo-text:visited,
+.navbar .logo.logo-text:focus {
+  color: #f8fafc;
+  background: transparent;
+  text-decoration: none;
+}
+
+.navbar .logo.logo-text:hover span,
+.navbar .logo.logo-text:visited span,
+.navbar .logo.logo-text:focus span {
+  color: var(--couleur-principale);
 }
 
 /* RESPONSIVE MOBILE */
