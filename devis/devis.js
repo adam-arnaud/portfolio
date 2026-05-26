@@ -95,7 +95,7 @@ function getHistory() {
 }
 
 function renderHistory() {
-    const history = getHistory();
+    const history = getHistory().slice(0, 3);
 
     if (!history.length) {
         historyList.innerHTML = "<li>Aucun devis enregistré.</li>";
@@ -119,7 +119,8 @@ function resetQuote() {
     form.reset();
     pagesInput.value = 1;
     lastQuote = null;
-    result.textContent = "Le devis apparaîtra ici.";
+    result.textContent =
+    'Complétez le formulaire pour obtenir votre estimation personnalisée.'
 }
 
 async function loadLogo() {
