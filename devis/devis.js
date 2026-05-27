@@ -23,7 +23,7 @@ const pdfBtn = document.querySelector("#pdf-btn");
 const resetBtn = document.querySelector("#reset-btn");
 const result = document.querySelector("#result");
 const historyList = document.querySelector("#quote-history");
-
+const clearHistoryBtn = document.querySelector("#clear-history");
 let lastQuote = null;
 
 function formatPrice(price) {
@@ -113,6 +113,11 @@ function renderHistory() {
     `
         )
         .join("");
+}
+
+function clearHistory() {
+    localStorage.removeItem("arnaudQuoteHistory");
+    renderHistory();
 }
 
 function resetQuote() {
@@ -242,5 +247,6 @@ doc.save("devis-arnaud-adam.pdf");
 calculateBtn.addEventListener("click", calculateQuote);
 pdfBtn.addEventListener("click", generatePDF);
 resetBtn.addEventListener("click", resetQuote);
+clearHistoryBtn.addEventListener("click", clearHistory);
 
 renderHistory();
