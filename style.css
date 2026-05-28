@@ -1385,19 +1385,20 @@ footer a:hover {
 @media (max-width: 600px) {
 
   .menu-toggle {
-  display: block;
-}
+    display: block;
+  }
 
-.nav-links {
-  display: none;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-}
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.nav-links.active {
-  display: flex;
-}
+  .nav-links.active {
+    display: flex;
+  }
+
   .navbar {
     flex-direction: column;
     align-items: center;
@@ -1411,17 +1412,19 @@ footer a:hover {
   }
 
   .nav-links {
-  display: none;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  gap: 7px;
-  padding: 4px 0 6px;
-}
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 0 6px;
+    transition: all 0.3s ease;
+  }
 
-.nav-links.active {
-  display: flex;
-}
+  .nav-links.active {
+    display: flex;
+    animation: fadeMenu 0.3s ease;
+  }
 
   .nav-links a {
     flex: 0 0 auto;
@@ -1442,9 +1445,9 @@ footer a:hover {
   }
 
   .hero-title {
-  font-size: clamp(2rem, 10vw, 2.7rem);
-  line-height: 1.08;
-}
+    font-size: clamp(2rem, 10vw, 2.7rem);
+    line-height: 1.08;
+  }
 
   .hero-subtitle {
     font-size: 1rem;
@@ -1478,7 +1481,7 @@ footer a:hover {
     white-space: normal;
     line-height: 1.4;
   }
-  
+
   .project-actions,
   .socials {
     flex-direction: column;
@@ -1531,22 +1534,34 @@ footer a:hover {
   }
 
   .hero-title {
-  font-size: clamp(2.35rem, 12vw, 3rem);
-}
+    font-size: clamp(2.35rem, 12vw, 3rem);
+  }
 
-.hero {
-  padding: 58px 18px 45px;
-}
+  .hero {
+    padding: 58px 18px 45px;
+  }
 
-.logo-text {
-  font-size: 1rem;
-}
+  .logo-text {
+    font-size: 1rem;
+  }
 
-.services-grid {
-  grid-template-columns: 1fr;
-}
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 
-.service-card {
-  padding: 24px 20px;
-}
+  .service-card {
+    padding: 24px 20px;
+  }
+
+  @keyframes fadeMenu {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }

@@ -110,11 +110,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
+
+    const icon = menuToggle.querySelector("i");
+
+    if (navLinks.classList.contains("active")) {
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-xmark");
+      menuToggle.setAttribute("aria-label", "Fermer le menu");
+    } else {
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+      menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+    }
   });
 
   navItems.forEach((link) => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("active");
+
+      const icon = menuToggle.querySelector("i");
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+      menuToggle.setAttribute("aria-label", "Ouvrir le menu");
     });
+  });
+
+  document.addEventListener("click", (event) => {
+    const isClickInsideMenu = navLinks.contains(event.target);
+    const isClickOnButton = menuToggle.contains(event.target);
+
+    if (
+      navLinks.classList.contains("active") &&
+      !isClickInsideMenu &&
+      !isClickOnButton
+    ) {
+      navLinks.classList.remove("active");
+
+      const icon = menuToggle.querySelector("i");
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+
+      menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+    }
   });
 });
