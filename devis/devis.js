@@ -25,6 +25,11 @@ const result = document.querySelector("#result");
 const historyList = document.querySelector("#quote-history");
 const clearHistoryBtn = document.querySelector("#clear-history");
 let lastQuote = null;
+function escapeHTML(value) {
+    const div = document.createElement("div");
+    div.textContent = value;
+    return div.innerHTML;
+}
 
 function formatPrice(price) {
     return new Intl.NumberFormat("fr-BE", {
@@ -67,11 +72,11 @@ function calculateQuote() {
         date: new Date().toLocaleDateString("fr-BE")
     };
 
-    result.innerHTML = `
-    <span>Projet : <strong>${lastQuote.siteLabel}</strong></span><br>
-    <span>Pages : <strong>${lastQuote.pages}</strong></span><br>
-    <span>Options : <strong>${lastQuote.selectedOptions.length}</strong></span>
-    <span class="quote-price">${formatPrice(lastQuote.total)}</span>
+   result.innerHTML = `
+    <span>Projet : <strong>${escapeHTML(lastQuote.siteLabel)}</strong></span><br>
+    <span>Pages : <strong>${escapeHTML(String(lastQuote.pages))}</strong></span><br>
+    <span>Options : <strong>${escapeHTML(String(lastQuote.selectedOptions.length))}</strong></span>
+    <span class="quote-price">${escapeHTML(formatPrice(lastQuote.total))}</span>
   `;
 
     saveQuote(lastQuote);
@@ -106,9 +111,9 @@ function renderHistory() {
         .map(
             (quote) => `
       <li>
-        <strong>${quote.clientName}</strong><br>
-        ${quote.siteLabel} — ${formatPrice(quote.total)}<br>
-        <small>${quote.date}</small>
+        <strong>${escapeHTML(quote.clientName)}</strong><br>
+        ${escapeHTML(quote.siteLabel)} — ${escapeHTML(formatPrice(quote.total))}<br>
+        <small>${escapeHTML(quote.date)}</small>
       </li>
     `
         )
