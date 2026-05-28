@@ -1297,6 +1297,80 @@ footer a:hover {
   color: var(--couleur-principale);
 }
 
+/* ===== FAQ ===== */
+
+.faq-section {
+  padding: 100px 20px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.faq-item {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: 20px;
+  padding: 28px;
+  backdrop-filter: blur(12px);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.faq-item h3 {
+  color: var(--cyan);
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.faq-item p {
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ===== FAQ Accordéon ===== */
+
+.faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-question i {
+  color: var(--cyan);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.faq-answer p {
+  padding-top: 18px;
+}
+
 /* RESPONSIVE MOBILE */
 @media (max-width: 600px) {
   .navbar {
