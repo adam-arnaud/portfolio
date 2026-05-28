@@ -202,6 +202,16 @@ a:hover {
   outline-offset: 2px;
 }
 
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--texte);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 8px;
+}
+
 /* NAVIGATION — desktop (≥ 768px) */
 @media (min-width: 768px) {
   .navbar-inner {
@@ -1373,6 +1383,22 @@ footer a:hover {
 
 /* RESPONSIVE MOBILE */
 @media (max-width: 600px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
   .navbar {
     flex-direction: column;
     align-items: center;
@@ -1386,12 +1412,18 @@ footer a:hover {
   }
 
   .nav-links {
+    display: none;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 7px;
     padding: 4px 0 6px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: fadeMenu 0.3s ease;
   }
 
   .nav-links a {
@@ -1413,8 +1445,8 @@ footer a:hover {
   }
 
   .hero-title {
-    font-size: clamp(2.4rem, 14vw, 3.2rem);
-    line-height: 1.05;
+    font-size: clamp(2rem, 10vw, 2.7rem);
+    line-height: 1.08;
   }
 
   .hero-subtitle {
@@ -1449,7 +1481,7 @@ footer a:hover {
     white-space: normal;
     line-height: 1.4;
   }
-  
+
   .project-actions,
   .socials {
     flex-direction: column;
@@ -1502,22 +1534,34 @@ footer a:hover {
   }
 
   .hero-title {
-  font-size: clamp(2.35rem, 12vw, 3rem);
-}
+    font-size: clamp(2.35rem, 12vw, 3rem);
+  }
 
-.hero {
-  padding: 58px 18px 45px;
-}
+  .hero {
+    padding: 58px 18px 45px;
+  }
 
-.logo-text {
-  font-size: 1rem;
-}
+  .logo-text {
+    font-size: 1rem;
+  }
 
-.services-grid {
-  grid-template-columns: 1fr;
-}
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 
-.service-card {
-  padding: 24px 20px;
-}
+  .service-card {
+    padding: 24px 20px;
+  }
+
+  @keyframes fadeMenu {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }

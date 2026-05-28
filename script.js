@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Animation de frappe
   // ---------------------------------------------
   const phrases = [
-  "Création de sites vitrines modernes...",
-  "Solutions web pour indépendants...",
-  "Design responsive & expérience utilisateur...",
-  "Estimation de projet avec devis PDF..."
-];
+    "Création de sites vitrines modernes...",
+    "Solutions web pour indépendants...",
+    "Design responsive & expérience utilisateur...",
+    "Estimation de projet avec devis PDF..."
+  ];
 
   const element = document.querySelector(".typing");
 
@@ -94,6 +94,63 @@ faqItems.forEach((item) => {
       answer.style.maxHeight = answer.scrollHeight + "px";
     } else {
       answer.style.maxHeight = null;
+    }
+  });
+});
+
+// ---------------------------------------------
+// Menu burger mobile
+// ---------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const navItems = document.querySelectorAll(".nav-links a");
+
+  if (!menuToggle || !navLinks) return;
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+
+    const icon = menuToggle.querySelector("i");
+
+    if (navLinks.classList.contains("active")) {
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-xmark");
+      menuToggle.setAttribute("aria-label", "Fermer le menu");
+    } else {
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+      menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+    }
+  });
+
+  navItems.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+
+      const icon = menuToggle.querySelector("i");
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+      menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    const isClickInsideMenu = navLinks.contains(event.target);
+    const isClickOnButton = menuToggle.contains(event.target);
+
+    if (
+      navLinks.classList.contains("active") &&
+      !isClickInsideMenu &&
+      !isClickOnButton
+    ) {
+      navLinks.classList.remove("active");
+
+      const icon = menuToggle.querySelector("i");
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+
+      menuToggle.setAttribute("aria-label", "Ouvrir le menu");
     }
   });
 });
