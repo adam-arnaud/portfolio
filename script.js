@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Animation de frappe
   // ---------------------------------------------
   const phrases = [
-  "Création de sites vitrines modernes...",
-  "Solutions web pour indépendants...",
-  "Design responsive & expérience utilisateur...",
-  "Estimation de projet avec devis PDF..."
-];
+    "Création de sites vitrines modernes...",
+    "Solutions web pour indépendants...",
+    "Design responsive & expérience utilisateur...",
+    "Estimation de projet avec devis PDF..."
+  ];
 
   const element = document.querySelector(".typing");
 
@@ -95,5 +95,26 @@ faqItems.forEach((item) => {
     } else {
       answer.style.maxHeight = null;
     }
+  });
+});
+
+// ---------------------------------------------
+// Menu burger mobile
+// ---------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const navItems = document.querySelectorAll(".nav-links a");
+
+  if (!menuToggle || !navLinks) return;
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  navItems.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
   });
 });
