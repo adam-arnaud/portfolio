@@ -199,6 +199,7 @@ a:hover {
   background: var(--couleur-principale);
   transition: var(--transition);
 }
+
 .nav-links a.active::after {
   width: calc(100% - 28px);
 }
@@ -655,7 +656,9 @@ section h2::after {
   border: 1px solid rgba(56, 189, 248, 0.12);
   border-radius: 18px;
   padding: 28px 22px;
-  transition: all 0.35s ease;
+  transition: transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
 }
 
@@ -726,7 +729,9 @@ section h2::after {
   border: 1px solid rgba(56, 189, 248, 0.08);
   border-radius: 18px;
   padding: 22px;
-  transition: all 0.35s ease;
+  transition: transform 0.35s ease,
+            box-shadow 0.35s ease,
+            border-color 0.35s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
@@ -897,7 +902,9 @@ section h2::after {
   border-radius: 18px;
   padding: 30px 22px;
   text-align: center;
-  transition: all 0.35s ease;
+  transition: transform 0.35s ease,
+            box-shadow 0.35s ease,
+            border-color 0.35s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
 }
 
@@ -1556,10 +1563,6 @@ footer a:hover {
     bottom: 18px;
     width: 42px;
     height: 42px;
-  }
-
-  .hero-title {
-    font-size: clamp(2.35rem, 12vw, 3rem);
   }
 
   .hero {
