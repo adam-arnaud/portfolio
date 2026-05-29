@@ -497,6 +497,10 @@ section {
   padding: var(--espace-section-mobile) 20px;
 }
 
+#contact {
+  padding-bottom: 35px;
+}
+
 section h2 {
   margin-bottom: 25px;
   font-size: 1.7rem;
@@ -1198,13 +1202,39 @@ section h2::after {
   text-align: center;
 }
 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.footer-links a {
+  color: var(--couleur-principale);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-legal {
+  margin-top: 15px;
+}
+
+footer strong {
+  font-size: 1.1rem;
+  color: var(--texte);
+}
+
 /* FOOTER */
 footer {
   text-align: center;
   padding: 40px;
   background: var(--bg-footer);
   color: var(--texte-discret);
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 footer a {
