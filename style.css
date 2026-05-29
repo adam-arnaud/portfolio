@@ -1228,6 +1228,21 @@ footer strong {
   color: var(--texte);
 }
 
+.project-learning {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.projects-note {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  opacity: 0.85;
+  line-height: 1.7;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
