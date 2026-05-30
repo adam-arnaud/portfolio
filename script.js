@@ -88,12 +88,24 @@ faqItems.forEach((item) => {
   if (!question || !answer) return;
 
   question.addEventListener("click", () => {
-    item.classList.toggle("active");
+    const isAlreadyOpen = item.classList.contains("active");
 
-    if (item.classList.contains("active")) {
+    // On ferme d'abord tous les volets
+    faqItems.forEach((otherItem) => {
+      const otherAnswer = otherItem.querySelector(".faq-answer");
+
+      otherItem.classList.remove("active");
+
+      if (otherAnswer) {
+        otherAnswer.style.maxHeight = null;
+      }
+    });
+
+    // Si le volet cliqué était fermé, on l'ouvre
+    // S'il était déjà ouvert, il reste fermé
+    if (!isAlreadyOpen) {
+      item.classList.add("active");
       answer.style.maxHeight = answer.scrollHeight + "px";
-    } else {
-      answer.style.maxHeight = null;
     }
   });
 });
