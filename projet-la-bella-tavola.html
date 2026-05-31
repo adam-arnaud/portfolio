@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Projet La Bella Tavola — Arnaud Adam</title>
+
+  <meta name="description"
+    content="Étude de cas du projet La Bella Tavola : site vitrine responsive pour un restaurant italien fictif, avec menu, contact, Google Maps, formulaire et animations JavaScript.">
+
+  <meta name="author" content="Arnaud Adam">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://a-adam.be/projet-la-bella-tavola.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Projet La Bella Tavola — Arnaud Adam">
+  <meta property="og:description"
+    content="Site vitrine responsive pour un restaurant italien fictif : menu, formulaire, Google Maps, navigation mobile et ambiance visuelle chaleureuse.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://a-adam.be/projet-la-bella-tavola.html">
+  <meta property="og:image" content="https://a-adam.be/images/site-la-bella-tavola.webp">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projet La Bella Tavola — Arnaud Adam">
+  <meta name="twitter:description"
+    content="Étude de cas d’un site vitrine pour restaurant avec menu, formulaire, Google Maps et responsive design.">
+  <meta name="twitter:image" content="https://a-adam.be/images/site-la-bella-tavola.webp">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="navbar" aria-label="Navigation principale">
+    <a href="index.html#apropos" class="logo logo-text">
+      Arnaud<span>Adam</span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Ouvrir le menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="nav-links">
+      <a href="index.html#accueil">Accueil</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#projets">Réalisations</a>
+      <a href="index.html#outils">Outils</a>
+      <a href="index.html#apropos">À propos</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero project-detail-hero">
+    <div class="hero-content">
+      <p class="hero-kicker">Étude de cas • Site vitrine • Restaurant</p>
+
+      <h1 class="hero-title">La Bella Tavola</h1>
+
+      <p class="hero-subtitle">
+        Site vitrine responsive développé pour un restaurant italien fictif.
+      </p>
+
+      <p class="hero-description">
+        Un projet conçu pour présenter un établissement, mettre en valeur son ambiance,
+        afficher une carte claire et faciliter la prise de contact ou la réservation.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="https://adam-arnaud.github.io/la-bella-tavola/" target="_blank" rel="noopener noreferrer"
+          class="btn">
+          Voir le site en ligne
+        </a>
+
+        <a href="index.html#projets" class="btn btn-secondary">
+          Retour aux réalisations
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="project-detail-section">
+      <h2>Contexte du projet</h2>
+
+      <div class="about-card">
+        <p>
+          La Bella Tavola est un projet de site vitrine imaginé pour un restaurant italien.
+          L’objectif était de créer une présence en ligne claire, moderne et chaleureuse,
+          capable de présenter le restaurant, son ambiance, sa carte et ses informations pratiques.
+        </p>
+
+        <p>
+          Ce projet m’a permis de travailler sur un cas proche d’un vrai besoin local :
+          un commerce qui souhaite être visible, rassurer ses visiteurs et faciliter les demandes de contact.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Objectif</h2>
+
+      <div class="about-card">
+        <p>
+          L’objectif était de développer un site agréable à parcourir, adapté aux mobiles,
+          avec une navigation simple et des informations faciles à trouver.
+        </p>
+
+        <p>
+          Le site devait donner envie de découvrir le restaurant, consulter la carte,
+          trouver rapidement l’adresse et contacter l’établissement.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Fonctionnalités développées</h2>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <h3>Présentation du restaurant</h3>
+          <p>
+            Mise en avant de l’identité du restaurant, de son ambiance et de son positionnement.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <h3>Carte du restaurant</h3>
+          <p>
+            Organisation des plats et informations de menu pour une lecture claire et agréable.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </div>
+          <h3>Google Maps</h3>
+          <p>
+            Intégration d’une carte afin d’aider les visiteurs à localiser facilement l’établissement.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <h3>Formulaire de contact</h3>
+          <p>
+            Mise en place d’un formulaire pour faciliter les demandes d’information ou de réservation.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Technologies utilisées</h2>
+
+      <div class="skills-grid">
+        <article class="skill-card">
+          <i class="fa-brands fa-html5"></i>
+          <h3>HTML5</h3>
+          <p>Structure des pages, organisation du contenu et hiérarchie claire des informations.</p>
+        </article>
+
+        <article class="skill-card">
+          <i class="fa-brands fa-css3-alt"></i>
+          <h3>CSS3</h3>
+          <p>Mise en page responsive, ambiance visuelle, espacements et adaptation mobile.</p>
+        </article>
+
+        <article class="skill-card">
+          <i class="fa-brands fa-js"></i>
+          <h3>JavaScript</h3>
+          <p>Animations simples, interactions et amélioration de l’expérience utilisateur.</p>
+        </article>
+
+        <article class="skill-card">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <h3>Google Maps</h3>
+          <p>Intégration d’une carte pour afficher l’emplacement de l’établissement.</p>
+        </article>
+
+        <article class="skill-card">
+          <i class="fa-brands fa-git-alt"></i>
+          <h3>Git & GitHub</h3>
+          <p>Versionnement du projet, sauvegarde du code et mise en ligne avec GitHub Pages.</p>
+        </article>
+
+        <article class="skill-card">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <h3>Responsive design</h3>
+          <p>Adaptation du site aux ordinateurs, tablettes et smartphones.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Ce que ce projet m’a appris</h2>
+
+      <div class="about-card">
+        <p>
+          Ce projet m’a permis de mieux comprendre la structure d’un site vitrine destiné
+          à un commerce local : présentation, informations pratiques, carte, contact et navigation claire.
+        </p>
+
+        <p>
+          J’ai travaillé sur l’importance de l’ambiance visuelle, de la lisibilité du menu
+          et du parcours utilisateur, surtout sur mobile.
+        </p>
+
+        <p>
+          Ce type de projet est aussi utile pour apprendre à transformer une activité réelle
+          en site web simple, rassurant et professionnel.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Améliorations possibles</h2>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <span class="status">Évolution</span>
+          <h3>Réservation en ligne</h3>
+          <p>
+            Ajouter un système de réservation simple avec date, heure, nombre de personnes
+            et confirmation par email.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <span class="status">Contenu</span>
+          <h3>Galerie photos</h3>
+          <p>
+            Ajouter des photos du restaurant, des plats et de l’équipe pour renforcer la confiance.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <span class="status">SEO local</span>
+          <h3>Référencement local</h3>
+          <p>
+            Optimiser davantage le site pour les recherches locales liées au restaurant,
+            à la ville et au type de cuisine.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Conclusion</h2>
+
+      <div class="contact-card">
+        <p>
+          La Bella Tavola est un projet important dans mon apprentissage, car il montre
+          ma capacité à créer un site vitrine clair et cohérent pour un commerce local.
+        </p>
+
+        <p>
+          Il constitue une bonne base de réflexion pour des projets réels de restaurants,
+          boulangeries, artisans ou petites entreprises souhaitant améliorer leur présence en ligne.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="https://adam-arnaud.github.io/la-bella-tavola/" target="_blank" rel="noopener noreferrer"
+            class="btn">
+            Voir le site
+          </a>
+
+          <a href="index.html#contact" class="btn btn-secondary">
+            Discuter d’un site similaire
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Arnaud Adam — Création Web</strong></p>
+
+    <p>Sites web modernes & outils interactifs</p>
+
+    <p class="footer-legal">
+      © 2026 Arnaud Adam — Tous droits réservés
+    </p>
+
+    <p>
+      <a href="index.html#projets">Retour aux réalisations</a>
+    </p>
+  </footer>
+
+  <button class="btn-top" id="btnTop" aria-label="Retour en haut">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
