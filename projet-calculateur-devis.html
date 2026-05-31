@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Projet Calculateur de devis — Arnaud Adam</title>
+
+  <meta name="description"
+    content="Étude de cas du calculateur de devis interactif développé par Arnaud Adam : outil web en JavaScript avec estimation automatique, historique, localStorage et génération PDF.">
+
+  <meta name="author" content="Arnaud Adam">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://a-adam.be/projet-calculateur-devis.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Projet Calculateur de devis — Arnaud Adam">
+  <meta property="og:description"
+    content="Outil web interactif développé en JavaScript pour estimer un projet web, sauvegarder des simulations et générer un devis PDF.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://a-adam.be/projet-calculateur-devis.html">
+  <meta property="og:image" content="https://a-adam.be/images/calculateur-devis.webp">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projet Calculateur de devis — Arnaud Adam">
+  <meta name="twitter:description"
+    content="Étude de cas d’un outil web interactif en JavaScript avec estimation automatique, historique et génération PDF.">
+  <meta name="twitter:image" content="https://a-adam.be/images/calculateur-devis.webp">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="navbar" aria-label="Navigation principale">
+    <a href="index.html#apropos" class="logo logo-text">
+      Arnaud<span>Adam</span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Ouvrir le menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="nav-links">
+      <a href="index.html#accueil">Accueil</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#projets">Réalisations</a>
+      <a href="index.html#outils">Outils</a>
+      <a href="index.html#apropos">À propos</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero project-detail-hero">
+    <div class="hero-content">
+      <p class="hero-kicker">Étude de cas • Outil interactif • JavaScript</p>
+
+      <h1 class="hero-title">Calculateur de devis interactif</h1>
+
+      <p class="hero-subtitle">
+        Un outil web développé en JavaScript pour estimer un projet de site web et générer un devis PDF.
+      </p>
+
+      <p class="hero-description">
+        Ce projet montre ma capacité à créer une solution interactive utile :
+        calcul automatique, options personnalisables, historique des simulations
+        et génération de document PDF.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="devis.html" class="btn">
+          Tester l’outil
+        </a>
+
+        <a href="index.html#projets" class="btn btn-secondary">
+          Retour aux réalisations
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="project-detail-section">
+      <h2>Contexte du projet</h2>
+
+      <div class="about-card">
+        <p>
+          Le calculateur de devis interactif a été créé pour répondre à un besoin simple :
+          aider un visiteur à obtenir une première estimation du budget nécessaire pour un projet web.
+        </p>
+
+        <p>
+          L’idée était de créer un outil clair, accessible et facile à utiliser,
+          capable de transformer plusieurs choix en une estimation lisible,
+          tout en montrant concrètement l’utilité du JavaScript dans une page web.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Objectif</h2>
+
+      <div class="about-card">
+        <p>
+          L’objectif était de développer une interface interactive permettant de sélectionner
+          un type de site, des options supplémentaires et différentes informations utiles
+          afin de calculer automatiquement une estimation.
+        </p>
+
+        <p>
+          Le projet devait également permettre de sauvegarder les simulations,
+          de les consulter dans un historique et de générer un document PDF propre
+          pouvant servir de base de discussion avec un futur client.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Fonctionnalités développées</h2>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-calculator"></i>
+          </div>
+          <h3>Calcul automatique</h3>
+          <p>
+            Estimation dynamique du prix selon le type de projet, le nombre de pages
+            et les options sélectionnées.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-list-check"></i>
+          </div>
+          <h3>Options personnalisables</h3>
+          <p>
+            Ajout de fonctionnalités comme le responsive design, le SEO,
+            les formulaires ou d’autres besoins liés au projet.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+          </div>
+          <h3>Historique des simulations</h3>
+          <p>
+            Sauvegarde locale des estimations pour permettre à l’utilisateur
+            de retrouver ses précédentes simulations.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fa-solid fa-file-pdf"></i>
+          </div>
+          <h3>Génération PDF</h3>
+          <p>
+            Création automatique d’un document PDF récapitulatif avec les informations
+            du projet et l’estimation calculée.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Technologies utilisées</h2>
+
+      <div class="skills-grid">
+        <article class="skill-card">
+          <i class="fa-brands fa-html5"></i>
+          <h3>HTML5</h3>
+          <p>Structure du formulaire, organisation des champs et contenu de l’interface.</p>
+        </article>
+
+        <article class="skill-card">
+          <i class="fa-brands fa-css3-alt"></i>
+          <h3>CSS3</h3>
+          <p>Mise en page responsive, design de l’outil et confort de lecture.</p>
+        </article>
+
+        <article class="skill-card">
+          <i class="fa-brands fa-js"></i>
+          <h3>JavaScript</h3>
+          <p>Calculs, conditions, interactions, gestion de l’historique et logique front-end.</p>
+        </article>
+
+        <article class="skill-card">
+          <i class="fa-solid fa-database"></i>
+          <h3>localStorage</h3>
+          <p>Sauvegarde locale des simulations directement dans le navigateur.</p>
+        </article>
+
+        <article class="skill-card">
+          <i class="fa-solid fa-file-pdf"></i>
+          <h3>jsPDF</h3>
+          <p>Génération automatique d’un devis PDF depuis les données du formulaire.</p>
+        </article>
+
+        <article class="skill-card">
+          <i class="fa-brands fa-github"></i>
+          <h3>Git & GitHub</h3>
+          <p>Versionnement du projet, sauvegarde du code et mise en ligne.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Ce que ce projet m’a appris</h2>
+
+      <div class="about-card">
+        <p>
+          Ce projet m’a permis d’aller plus loin que la création d’un simple site vitrine.
+          J’ai travaillé sur une logique applicative avec des calculs, des conditions,
+          des champs de formulaire et des interactions utilisateur.
+        </p>
+
+        <p>
+          J’ai également appris à utiliser le <strong>localStorage</strong>,
+          c’est-à-dire une sauvegarde locale dans le navigateur, afin de conserver
+          un historique des simulations sans base de données.
+        </p>
+
+        <p>
+          La génération PDF avec <strong>jsPDF</strong> m’a permis de comprendre
+          comment transformer des données saisies par l’utilisateur en document exploitable.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Améliorations possibles</h2>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <span class="status">Évolution</span>
+          <h3>Formulaire plus complet</h3>
+          <p>
+            Ajouter davantage de questions pour affiner l’estimation :
+            délais, type de contenu, nombre de sections, maintenance ou accompagnement.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <span class="status">Automatisation</span>
+          <h3>Email automatique</h3>
+          <p>
+            Permettre l’envoi automatique du récapitulatif par email après la génération
+            de l’estimation.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <span class="status">Version pro</span>
+          <h3>Espace administration</h3>
+          <p>
+            Prévoir une version où les tarifs et options pourraient être modifiés
+            facilement sans toucher au code.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Conclusion</h2>
+
+      <div class="contact-card">
+        <p>
+          Le calculateur de devis interactif est un projet important dans mon portfolio,
+          car il montre ma capacité à créer un outil web concret, utile et personnalisé.
+        </p>
+
+        <p>
+          Il représente bien mon orientation actuelle : développer des sites modernes,
+          mais aussi des petites solutions interactives capables de répondre à des besoins réels.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="devis.html" class="btn">
+            Tester le calculateur
+          </a>
+
+          <a href="index.html#contact" class="btn btn-secondary">
+            Discuter d’un outil similaire
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Arnaud Adam — Création Web</strong></p>
+
+    <p>Sites web modernes & outils interactifs</p>
+
+    <p class="footer-legal">
+      © 2026 Arnaud Adam — Tous droits réservés
+    </p>
+
+    <p>
+      <a href="index.html#projets">Retour aux réalisations</a>
+    </p>
+  </footer>
+
+  <button class="btn-top" id="btnTop" aria-label="Retour en haut">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
